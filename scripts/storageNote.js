@@ -1,4 +1,3 @@
-//Salvar uma nota no localStorage
 const STORAGE_KEY = "notes_app_items";
 
 function loadNotesFromStorage() {

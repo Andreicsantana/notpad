@@ -1,8 +1,8 @@
-// Funcao para atualizar uma nota existente
-function updateNote(notes, noteId, content) {
+function updateNote(notes, noteId, title, content) {
+	const trimmedTitle = title.trim();
 	const trimmedContent = content.trim();
 
-	if (!trimmedContent) {
+	if (!trimmedTitle || !trimmedContent) {
 		return notes;
 	}
 
@@ -10,6 +10,7 @@ function updateNote(notes, noteId, content) {
 		if (note.id === noteId) {
 			return {
 				...note,
+				title: trimmedTitle,
 				content: trimmedContent,
 			};
 		}
