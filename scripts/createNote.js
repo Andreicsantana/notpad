@@ -1,13 +1,14 @@
-// Funcao para criar uma nova nota::::
-function createNote(notes, content) {
+function createNote(notes, title, content) {
+	const trimmedTitle = title.trim();
 	const trimmedContent = content.trim();
 
-	if (!trimmedContent) {
+	if (!trimmedTitle || !trimmedContent) {
 		return notes;
 	}
 
 	const newNote = {
 		id: Date.now(),
+		title: trimmedTitle,
 		content: trimmedContent,
 	};
 
